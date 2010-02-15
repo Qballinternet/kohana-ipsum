@@ -163,4 +163,32 @@ class Ipsum
 		);
 	}
 
+	/**
+	 * __call() has been implemented only so __callStatic will function properly
+	 *
+	 * @param <type> $method
+	 * @param <type> $args
+	 */
+	public function __call($method, $args)
+	{
+		throw new BadMethodCallException();
+	}
+
+	/**
+	 * __callStatic() has been implemented to allow for Ipsum::hx() where x is 1-6
+	 *
+	 * @param	string	$method
+	 * @param	array	$args
+	 * @return	mixed
+	 */
+	public static function __callStatic($method, $args)
+	{
+		if (strlen($method) == 2 AND $method[0] == 'h' AND is_numeric($method[1]))
+		{
+			return self::heading(intval($method[1]));
+		}
+
+		throw new BadMethodCallException($method);
+	}
+
 } // End Ipsum

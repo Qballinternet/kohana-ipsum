@@ -16,12 +16,12 @@ class Controller_Ipsum extends Controller
 	 */
 	public function action_demo()
 	{
-		echo Ipsum::heading(1);
-		echo Ipsum::heading(2);
-		echo Ipsum::heading(3);
-		echo Ipsum::heading(4);
-		echo Ipsum::heading(5);
-		echo Ipsum::heading(6);
+		echo Ipsum::h1();
+		echo Ipsum::h2();
+		echo Ipsum::h3();
+		echo Ipsum::h4();
+		echo Ipsum::h5();
+		echo Ipsum::h6();
 		echo 'WORD: '.Ipsum::words().'<br />';
 		echo 'SENTENCE: '.Ipsum::sentences().'<br />';
 		echo Ipsum::paragraphs();
