@@ -31,8 +31,6 @@ class Ipsum
 		{
 			$file = file_get_contents(MODPATH.'ipsum/ipsum.txt');
 			self::$lorem_ipsum = array_unique(str_word_count(strtolower($file), 1));
-			if (Kohana::$environment == 'production')
-				Kohana::$log->add('WARNING', 'The Ipsum module should not be used in production. Please check your code to remove any references to this module\'s methods.');
 		}
 
 		$count = is_int($count) ? $count : 1;

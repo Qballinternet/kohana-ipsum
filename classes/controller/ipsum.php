@@ -41,10 +41,6 @@ class Controller_Ipsum extends Controller
 		// Get image arguments
 		extract(arr::extract($_GET, array('width', 'height', 'font_size', 'border')));
 
-		// Log a warning if the application is in production
-		if (Kohana::$environment == 'production')
-				Kohana::$log->add('WARNING', 'The Ipsum module should not be used in production. Please check your code to remove any references to this module\'s generated images.');
-
 		// Make sure server supports GD
 		if ( ! function_exists('imagecreatetruecolor')) die('GD not supported on this server.');
 
