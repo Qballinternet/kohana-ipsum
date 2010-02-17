@@ -31,6 +31,8 @@ class Ipsum
 		{
 			$file = file_get_contents(MODPATH.'ipsum/ipsum.txt');
 			self::$lorem_ipsum = array_unique(str_word_count(strtolower($file), 1));
+			if (Kohana::$environment == 'production')
+				Kohana::$log->add('WARNING', 'The Ipsum module should not be used in production. Please check your code to remove any references to this module\'s methods.');
 		}
 
 		$count = is_int($count) ? $count : 1;
@@ -164,17 +166,6 @@ class Ipsum
 	}
 
 	/**
-	 * __call() has been implemented only so __callStatic will function properly
-	 *
-	 * @param <type> $method
-	 * @param <type> $args
-	 */
-	public function __call($method, $args)
-	{
-		throw new BadMethodCallException();
-	}
-
-	/**
 	 * __callStatic() has been implemented to allow for Ipsum::hx() where x is 1-6
 	 *
 	 * @param	string	$method
@@ -188,7 +179,12 @@ class Ipsum
 			return self::heading(intval($method[1]));
 		}
 
-		throw new BadMethodCallException($method);
+		throw new BadMethodCallException("The static method $method does not exist in the Ipsum module.");
 	}
+
+	/**
+	 * Ensures the class cannot be instantiated
+	 */
+	final private function __construct() {}
 
 } // End Ipsum
