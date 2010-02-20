@@ -1,9 +1,8 @@
 <?php
 /**
- * Ipsum Controller class
+ * The Ipsum Controller allows the user to run the module's demo and also
+ * contains the function for generating an Ipsum dummy image.
  *
- * The Ipsum Controller allows the user to run the demo and also contains the
- * function for generating an image.
  * @package    Ipsum
  * @version    v2.0
  * @author     Jeremy Lindblom <jeremy@synapsestudios.com>
@@ -12,7 +11,7 @@
 class Controller_Ipsum extends Controller
 {
 	/**
-	 * Rund the demo for the ipsum module
+	 * Runs the demo for the Ipsum module
 	 */
 	public function action_demo()
 	{

@@ -1,10 +1,9 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
 /**
- * Ipsum class
+ * The Ipsum helper is used to easily generate random lorem ipsum text in views.
+ * It can also create lorem ipsum text inside specific HTML elements including
+ * paragraphs, blockquotes, lists, and images.
  *
- * The ipsum helper is used to easily generate random lorem ipsum text in views.
- * It can also create this text in specific HTML elements including paragraphs,
- * blockquotes, lists, and images.
  * @package    Ipsum
  * @version    v2.0
  * @author     Jeremy Lindblom <jeremy@synapsestudios.com>
@@ -13,7 +12,7 @@
 class Ipsum
 {
 	/**
-	 * Contains and array of lorem ipsum words retrieved from a text file.
+	 * Contains an array of lorem ipsum words retrieved from a text file.
 	 *
 	 * @var	array
 	 */
@@ -164,7 +163,8 @@ class Ipsum
 	}
 
 	/**
-	 * __callStatic() has been implemented to allow for Ipsum::hx() where x is 1-6
+	 * The __callStatic() has been implemented to allow for Ipsum::hx() where
+	 * x is 1-6. This only works in PHP 5.3+
 	 *
 	 * @param	string	$method
 	 * @param	array	$args
@@ -180,9 +180,9 @@ class Ipsum
 		throw new BadMethodCallException("The static method $method does not exist in the Ipsum module.");
 	}
 
-	/**
-	 * Ensures the class cannot be instantiated
-	 */
-	final private function __construct() {}
+	final private function __construct()
+	{
+		// Enforce static behavior
+	}
 
 } // End Ipsum
