@@ -163,8 +163,8 @@ class Ipsum
 	}
 
 	/**
-	 * The __callStatic() has been implemented to allow for Ipsum::hx() where
-	 * x is 1-6. This only works in PHP 5.3+
+	 * The `__callStatic()` has been implemented to allow for `Ipsum::h?()` where
+	 * ? is 1-6. This only works in PHP 5.3+
 	 *
 	 * @param	string	$method
 	 * @param	array	$args

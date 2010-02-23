@@ -1,2 +1,3 @@
 1. **Ipsum**
-    - [Introduction](ipsum.introduction)
+    - [Overview](ipsum.overview)
+    - [API](api/Ipsum)
