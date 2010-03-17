@@ -15,21 +15,7 @@ class Controller_Ipsum extends Controller
 	 */
 	public function action_demo()
 	{
-		echo Ipsum::h1();
-		echo Ipsum::h2();
-		echo Ipsum::h3();
-		echo Ipsum::h4();
-		echo Ipsum::h5();
-		echo Ipsum::h6();
-		echo 'WORD: '.Ipsum::words().'<br />';
-		echo 'SENTENCE: '.Ipsum::sentences().'<br />';
-		echo Ipsum::paragraphs();
-		echo Ipsum::blockquote();
-		echo Ipsum::ul();
-		echo Ipsum::ol();
-		echo Ipsum::image(rand(300,600), rand(100,300));
-		echo '<hr />';
-		echo Ipsum::page();
+		$this->request->response = View::factory('ipsum/demo');
 	}
 
 	/**
