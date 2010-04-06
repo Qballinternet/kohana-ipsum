@@ -4,7 +4,6 @@
  * contains the function for generating an Ipsum dummy image.
  *
  * @package    Ipsum
- * @version    v2.0
  * @author     Jeremy Lindblom <jeremy@synapsestudios.com>
  * @copyright  Copyright (c) 2009 Synapse Studios
  */
